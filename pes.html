@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PES</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+    --primary-color: hsl(9, 94%, 61%);
+    --primary-color-alt: hsl(28, 72%, 83%);
+    --second-color: #3e537c;
+    --second-color-alt: hsla(220, 33%, 36%, 65%);
+    --third-color: hsl(220, 36%, 28%);
+    --white-color: #fbfbfb;
+    --white-color-alt: hsl(12, 14%, 93%);
+    --dark-color: hsl(0, 0%, 100%);
+  }
+
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f7f7f7;
+			color: #333;
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--dark-color);
+  padding: 1rem 2rem;
+}
+.logo-home{
+  border-radius: 17px;
+  width: 17rem;
+  height: 17rem;
+}
+.company-logo {
+  font-size: 2.5rem;
+  background: -webkit-linear-gradient(
+    120deg,
+    var(--primary-color-alt),
+    var(--primary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-items {
+  display: flex;
+}
+.nav-item {
+  margin: 0 2rem;
+}
+.nav-link {
+  font-size: 1.1rem;
+  letter-spacing: 0.05rem;
+  position: relative;
+  background: -webkit-linear-gradient(
+    var(--primary-color-alt),
+    var(--primary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-link::before {
+  content: "";
+  background: linear-gradient(var(--primary-color), var(--primary-color-alt));
+  width: 100%;
+  height: 0.05rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 150ms;
+}
+.nav-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.menu-toggle {
+  display: none;
+}
+
+
+		main {
+			max-width: 960px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		li {
+			margin: 10px 0;
+			padding: 0;
+		}
+
+		footer {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			box-shadow: 0 -2px 5px rgba(0,0,0,.26);
+		}
+		.section-1 {
+    background-color: var(--dark-color);
+    display: grid;
+  }
+
+
+  /* .home-computer-container {} */
+  
+  .slogan .company-title {
+    background: -webkit-linear-gradient(
+      120deg,
+      var(--primary-color-alt),
+      var(--primary-color)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 17px;
+    border: var(--primary-color) solid ;
+    padding: 12px;
+    text-align: center;
+    
+  }
+
+  .slogan .company-slogan {
+  background: -webkit-linear-gradient(
+    120deg,
+    var(--primary-color-alt),
+    var(--primary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+}
+
+
+		@media screen and (max-width: 768px) {
+		h1 {
+				font-size: 24px;
+			}
+
+			main {
+				padding: 10px;
+			}
+		
+        image{
+            width: 640px;
+            height: 360px;
+        }
+		h3{
+			text-shadow: #333;
+			font-size: medium;
+		}
+		header {
+    padding: 0.5rem 1rem;
+  }
+  .navbar {
+    background-color: var(--dark-color);
+    position: absolute;
+    top: 3.5rem;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 500ms;
+  }
+  .show-navbar {
+    display: flex;
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 300ms;
+  }
+  .nav-items {
+	text-decoration: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-item {
+	text-decoration: none;
+    margin: 0.5rem 0;
+  }
+  .menu-toggle {
+	
+    display: block;
+  }
+  .nav-link{
+	text-decoration: none;
+  }
+  .menu-toggle{
+	text-decoration: none;
+  }
+
+}
+  @media (min-width: 769px) {
+	header {
+    padding: 1rem 5rem;
+  }
+  .nav-items {
+  display: flex;
+}
+.nav-item {
+  margin: 0 2rem;
+}
+
+  /* ================= MAIN ================ */
+
+  /* -------- HOME SECTION -------------- */
+  .section-1 {
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+    padding: 10rem 5rem 0 5rem;
+  }
+  .slogan .company-title {
+    max-width: 30rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.5rem;
+  }
+
+  }
+  .image{
+	max-width: 100%;
+	max-height: 300px;
+  }
+  #logo-link{
+	text-decoration: none;
+  }
+  h2{
+	padding-bottom: 12px;
+  }
+  p{
+	padding-bottom: 3px;
+	word-spacing: 2px;
+  }
+ 
+		</style>
+</head>
+<body>
+	<header>
+		<div class="company-logo"><a href="qezgame.com"><img class="logo-home" src="logo-unbackground.jpg"></a></div>
+		<nav class="navbar">
+		  <ul class="nav-items">
+			<li class="nav-item"><a href="index.html" class="nav-link">Trang chủ</a></li>
+			<li class="nav-item"><a href="app.html" class="nav-link">Ứng dụng</a></li>
+			<li class="nav-item"><a href="#" class="nav-link">Tin tức</a></li>
+			<li class="nav-item"><a href="#" class="nav-link">Cộng đồng</a></li>       
+			<li class="nav-item"><a href="#" class="nav-link">Liên hệ</a></li>
+		  </ul>
+		</nav>
+		<div class="menu-toggle">
+		  <li class="nav-item"><a href="index.html" class="nav-link">Trang chủ</a></li>
+		  <li class="nav-item"><a href="app.html" class="nav-link">Ứng dụng</a></li>
+		  <li class="nav-item"><a href="#" class="nav-link">Tin tức</a></li>
+			<li class="nav-item"><a href="#" class="nav-link">Cộng đồng</a></li>       
+			<li class="nav-item"><a href="#" class="nav-link">Liên hệ</a></li>
+		</div>
+	  </header>
+	  <main>
+		<!-- HOME SECTION -->
+
+		<h2>Pro Evolution Football</h2>
+        <p> Pro Evolution Football hay là PES một tựa game thể thao điện tử về bóng đá của Konami và là dòng game kế nhiệm của series International Superstar Soccer.</p>
+		<p>Đây là một trò chơi bóng đá với nhiều chế độ chơi đưa người chơi đắm mình vào bòng không khí của bộ môn thể thao vua.</p>
+		<p> Tựa game xóa nhòa ranh giới giữa trò chơi và đời thực, bởi đồ họa của PES sẽ tái hiện những trận cầu đa phong cách với chất lượng 4K HDR không thể xuất sắc hơn. Tạo hình sống động của Messi, Ronaldo, Neymar… khiến bạn có cảm giác mình đang thưởng thức 1 trận bóng hay ở World Cup chứ không phải trò chơi quản lý bóng đá thông thường nữa...</p>
+		<p> Ngoài ra PES còn nổi bật với hơn 7 giải đấu, rất nhiều đối tác và sân vận động - nơi diễn ra những trận cầu đỉnh cao được hàng triệu game thủ mong đợi.</p>
+		<h2>Ảnh và video</h2>
+		<ul>
+			<li><img name="myimage" src="logopes.jpg" alt="Ảnh game" class="image"></li>
+			<li><iframe class="minivideo" width="560" height="315" src="https://www.youtube.com/embed/HzW_kD8gE0g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>
+		</ul>
+
+		<h2>Tuy nhiên hiện tại game đã không còn mang cái tên PES nữa, thay vào đó là cái Efootball</h2>
+		<ul>
+			<li><h3>Người chơi có thể tải game trên các kho ứng dụng hoặc có thể nhấp vào các link bên dưới</h3></li>
+			<li><h3>Lưu ý</h3></li>
+			<p>Người chơi cần fake ip sang nước ngoài để có thể tải game trên các cửa hàng chính thức như CHplay, Appstore, Microsoft Store,...</p>
+			<li><h3>Hướng dẫn Fake IP</h3></li>
+			<p>COMING SOON...</p>
+		</ul>
+
+		<h2>Tải game</h2>
+		<p>Bạn có thể tải game chính thức tại đây:</p>
+		<ul>
+			<li><a href="https://apps.microsoft.com/store/detail/efootball%E2%84%A2-2023/9NT1ZBBV6WH6">Tải game cho Windows</a></li>
+			<li><a href="https://play.google.com/store/apps/details?id=jp.konami.pesam&pli=1">Tải game cho Android</a></li>
+			<li><a href="https://apps.apple.com/us/app/efootball-2023/id1117270703">Tải game cho IOS</a></li>
+		</ul>
+	</main>
+	<footer>
+		<p>Bản quyền © 2023
+		</p>	
+
+</footer>
+</body>
+</html>
+
+			 
