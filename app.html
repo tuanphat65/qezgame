@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <link rel="stylesheet" href="apppage.css">
+        <title>Ứng dụng</title>
+    </head>
+    <body>
+        
+        <header>
+            <div class="company-logo"><a href="qezgame.com"><img class="logo-home" src="logo-unbackground.jpg"></a></div>
+            <nav class="navbar">
+                <ul class="nav-items">
+                  <li class="nav-item"><a href="index.html" class="nav-link">Trang chủ</a></li>
+                  <li class="nav-item"><a href="app.html" class="nav-link">Ứng dụng</a></li>
+                  <li class="nav-item"><a href="news.html" class="nav-link">Tin tức</a></li>
+                  <li class="nav-item"><a href="comunity.html" class="nav-link">Cộng đồng</a></li>       
+                  <li class="nav-item"><a href="contact.html" class="nav-link">Liên hệ</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <li class="nav-item"><a href="index.html" class="nav-link">Trang chủ</a></li>
+                <li class="nav-item"><a href="app.html" class="nav-link">Ứng dụng</a></li>
+                <li class="nav-item"><a href="news.html" class="nav-link">Tin tức</a></li>
+                  <li class="nav-item"><a href="comunity.html" class="nav-link">Cộng đồng</a></li>       
+                  <li class="nav-item"><a href="contact.html" class="nav-link">Liên hệ</a></li>
+            </div>
+        </header>
+        <main>
+            <!-- HOME SECTION -->
+            <section class="game-section">
+                <h2 class="line-title">Top game</h2>
+                  <div class="owl-carousel custom-carousel owl-theme">
+                    <div class="item active" style="background-image: url(pespng.jpg);">
+                      <div class="item-desc">
+                        <h3>Efootball (PES)</h3>
+                        <p>Pro Evolution Football hay là PES một tựa game thể thao điện tử về bóng đá của Konami và là 
+                          dòng game kế nhiệm của series International Superstar Soccer. <a href="pes.html">Chi tiết</a></p>
+                      </div>
+                    </div>
+                    <div class="item" style="background-image: url(minecraftpng.jpg);">
+                      <div class="item-desc">
+                        <h3>Minecraft</h3>
+                        <p>Minecraft là một tựa game thế giới mở được xây dựng dưới dạng những khối hộp do Mojang phát triển. <a href="minecraft.html">Chi tiết</a></p>
+                      </div>
+                    </div>
+                    <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/rdr-2.jpg);">
+                      <div class="item-desc">
+                        <h3>Red Dead Redemption 2</h3>
+                        <p>RDR 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
+                          Ancients.</p>
+                      </div>
+                    </div>
+                    <div class="item" style="background-image: url(pubgpng.jpg);">
+                      <div class="item-desc">
+                        <h3>PUBG</h3>
+                        <p>Playunkown's Battleground is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
+                          Ancients.</p>
+                      </div>
+                    </div>
+                    <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/fortnite.jpg);">
+                      <div class="item-desc">
+                        <h3>Fortnite</h3>
+                        <p>Battle royale where 100 players fight to be the last person standing.</p>
+                      </div>
+                    </div>
+                    <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/far-cry-5.jpg);">
+                      <div class="item-desc">
+                        <h3>Far Cry 5</h3>
+                        <p>Far Cry 5 is a 2018 first-person shooter game developed by Ubisoft.</p>
+                      </div>
+                    </div>
+                  </div>
+                
+              </section>
+        
+            <!-- PRODUCT SECTION -->
+        </main>
+        <footer>
+            <div class="container end-footer">
+              <div class="copyright">copyright © 2023 • <b>QEZGAME</b></div>
+            </div>
+        </footer>
+        <script src="apppage.js"></script>
+        <script>
+          $(".custom-carousel").owlCarousel({
+              autoWidth: true,
+              loop: true
+            });
+            $(document).ready(function () {
+              $(".custom-carousel .item").click(function () {
+                $(".custom-carousel .item").not($(this)).removeClass("active");
+                $(this).toggleClass("active");
+              });
+            });
+
+        </script>
+    </body>
+</html>
