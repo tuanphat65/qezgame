@@ -30,6 +30,7 @@ a {
 img {
   width: 100%;
   height: auto;
+  border: 0;
 }
 .bx {
   font-size: 2.5rem;
@@ -119,109 +120,162 @@ header {
 }
 
 /* ================= MAIN ================ */
-
-/* -------- HOME SECTION -------------- */
-.section-1 {
-    background-color: var(--dark-color);
-    display: grid;
+.clear {
+    clear: both;
   }
-  .home-computer{
-    width: 23rem;
-    height: 23rem;
+  ul,
+  ol {
+    list-style: none;
   }
-  /* .home-computer-container {} */
+  a {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+  }
+  a:focus,
+  a:active,
+  a:visited,
+  a:hover {
+    text-decoration: none;
+    outline: none;
+  }
+  a:hover {
+    color: #e73700;
+  }
+  h2 {
+    margin-bottom: 48px;
+    padding-bottom: 16px;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    position: relative;
+    text-transform: capitalize;
+  }
+  h3 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    line-height: 36px;
+  }
+  button {
+    outline: none !important;
+  }
+  /******* Common Element CSS End *********/
   
-  .slogan .company-title {
-    background: -webkit-linear-gradient(
-      120deg,
-      var(--primary-color-alt),
-      var(--primary-color)
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-top: 2rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    border-radius: 17px;
-    border: var(--primary-color) solid ;
-    padding: 12px;
-    text-align: center;
-    
+  /* -------- title style ------- */
+  .line-title {
+    position: relative;
+    width: 400px;
   }
-  .slogan .company-slogan {
-  background: -webkit-linear-gradient(
-    120deg,
-    var(--primary-color-alt),
-    var(--primary-color)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 1.8rem;
-}
+  .line-title::before,
+  .line-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    border-radius: 2px;
+  }
+  .line-title::before {
+    width: 100%;
+    background: #f2f2f2;
+  }
+  .line-title::after {
+    width: 32px;
+    background: #e73700;
+  }
+  
+  /******* Middle section CSS Start ******/
+  /* -------- Landing page ------- */
+  .game-section {
+    padding: 60px 50px;
+    overflow: hidden;
+  }
 
-/* -------- OFFER SECTION ------------- */
-.section-2 {
-  margin: 2rem 0;
-}
-.offer {
-  background-color: var(--dark-color);
-  margin: 1rem 0;
-  display: grid;
-}
-.offer img {
-    width: 38.5rem;
-    height: 19rem;
-  background-color: var(--dark-color);
-  padding: 2rem 0;
-}
-.offer-1 img {
-  background-color: var(--dark-color);
-  padding: 3rem 0;
-}
-.offer-description {
-  background-color: var(--white-color-alt);
-  padding: 0 1rem;
-}
-.offer-description .offer-title {
-  color: var(--second-color);
-  font-size: 1.8rem;
-  font-weight: 400;
-  padding: 1.5rem 0 0.5rem 0;
-}
-.offer-description .offer-hook {
-  color: var(--second-color-alt);
-  font-size: 1.2rem;
-}
-.offer-description .cart-btn {
-  cursor: pointer;
-  color: var(--second-color-alt);
-  font-size: 1.1rem;
-  display: grid;
-  place-items: center;
-  margin: 2rem 0 1rem 0;
-  width: 10rem;
-  height: 3rem;
-  background-image: linear-gradient(
-    to top,
-    var(--primary-color-alt),
-    var(--primary-color)
-  );
-}
-.offer-description .cart-btn:hover {
-  background-image: linear-gradient(
-    to bottom,
-    var(--primary-color-alt),
-    var(--primary-color)
-  );
-}
+  .owl-carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    overflow: hidden;
+    margin: 0 -10px; /* Thêm khoảng cách giữa các item */
+  }
+  .game-section .owl-stage {
+    margin: 15px 0;
+    display: flex;
+    display: -webkit-flex;
+  }
+  .game-section .owl-carousel .custom-carousel .owl-theme{
+    display: flex;
+  }
+  .game-section .item {
+    margin: 0 15px 60px;
+    width: 320px;
+    height: 400px;
+    display: flex;
+    display: -webkit-flex;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+    background: #343434 no-repeat center center / cover;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    cursor: pointer;
+  }
+  .game-section .item.active {
+    width: 500px;
+    box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+  }
+  .game-section .item:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  }
+  .game-section .item-desc {
+    padding: 0 24px 12px;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transform: translateY(calc(100% - 54px));
+    -webkit-transform: translateY(calc(100% - 54px));
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+  }
+  .game-section .item.active .item-desc {
+    transform: none;
+    -webkit-transform: none;
+  }
+  .game-section .item-desc p {
+    opacity: 0;
+    -webkit-transform: translateY(32px);
+    transform: translateY(32px);
+    transition: all 0.4s ease-in-out 0.2s;
+    -webkit-transition: all 0.4s ease-in-out 0.2s;
+  }
+  .game-section .item.active .item-desc p {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  .game-section .owl-theme.custom-carousel .owl-dots {
+    margin-top: -20px;
+    position: relative;
+    z-index: 5;
+  }
+  /******** Middle section CSS End *******/
+  
+ 
 
 
-/* -------- SPONSOR SECTION ----------- */
-
-/* ========= SUBSCRIBE SECTION ========== */
 /* =============== FOOTER =============== */
 .footer-title {
   font-weight: 500;
@@ -315,75 +369,104 @@ header {
     padding: 1rem 5rem;
   }
   /* ================= MAIN ================ */
-
-  /* -------- HOME SECTION -------------- */
-  .section-1 {
-    justify-content: space-between;
-    grid-template-columns: 1fr 1fr;
-    padding: 10rem 5rem 0 5rem;
-  }
-  .slogan .company-title {
-    max-width: 30rem;
-    font-size: 1.8rem;
-    letter-spacing: 0.5rem;
-  }
-  .slogan .company-slogan {
-    max-width: 20rem;
-    font-size: 1.3rem;
-  }
-  /* -------- OFFER SECTION ------------- */
-  .section-2 {
-    margin: 2rem 5rem;
-  }
-  .offer {
-    margin: 5rem 0;
-    align-items: center;
-    justify-content: space-between;
-    grid-template-rows: auto auto;
-  }
-  .offer-1 {
-    grid-template-areas: "offer-1-img offer-desc-1";
-  }
-  .offer-1 img {
-    background-color: var(--dark-color);
-    padding: 2rem 0;
-  }
-  .offer-2 {
-    grid-template-areas: "offer-desc-2 offer-2-img";
-  }
-  .offer-1-img {
-    grid-area: offer-1-img;
-  }
-  .offer-2-img {
-    grid-area: offer-2-img;
-  }
-  .offer-desc-1 {
-    grid-area: offer-desc-1;
-  }
-  .offer-desc-2 {
-    grid-area: offer-desc-2;
-  }
-  .offer-description .offer-title {
-    font-size: 1.9rem;
-    padding: 1.5rem 0 0.5rem 0;
-  }
-  .offer-description .offer-hook {
-    max-width: 30rem;
-  }
-  .offer-description {
-    background-color: var(--white-color-alt);
-    padding: 2rem 1rem;
-  }
-  .offer-description .offer-title {
-    padding: 0.5rem 0 1rem 0;
-  }
-  .offer-description .cart-btn {
-    margin: 2rem 0 0.5rem 0;
-  }
-  .offer-description .cart-btn a {
-    text-decoration: none;
-    color: #fbfbfb;
+ /***** responsive css Start ******/
+  
+ @media (min-width: 992px) and (max-width: 1199px) {
+    h2 {
+      margin-bottom: 32px;
     }
+    h3 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      line-height: 32px;
+    }
+  
+    /* -------- Landing page ------- */
+    .game-section {
+      padding: 50px 30px;
+    }
+    .game-section .item {
+      margin: 0 12px 60px;
+      width: 260px;
+      height: 360px;
+    }
+    .game-section .item.active {
+      width: 400px;
+    }
+    .game-section .item-desc {
+      transform: translateY(calc(100% - 46px));
+      -webkit-transform: translateY(calc(100% - 46px));
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    h2 {
+      margin-bottom: 32px;
+    }
+    h3 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      line-height: 32px;
+    }
+    .line-title {
+      width: 330px;
+    }
+  
+    /* -------- Landing page ------- */
+    .game-section {
+      padding: 50px 30px 40px;
+    }
+    .game-section .item {
+      margin: 0 12px 60px;
+      width: 240px;
+      height: 330px;
+    }
+    .game-section .item.active {
+      width: 360px;
+    }
+    .game-section .item-desc {
+      transform: translateY(calc(100% - 42px));
+      -webkit-transform: translateY(calc(100% - 42px));
+    }
+  }
+  
+  @media (max-width: 767px) {
+    body {
+      font-size: 14px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      line-height: 24px;
+    }
+    .line-title {
+      width: 250px;
+    }
+  
+    /* -------- Landing page ------- */
+    .game-section {
+      padding: 30px 15px 20px;
+    }
+    .game-section .item {
+      margin: 0 10px 40px;
+      width: 200px;
+      height: 280px;
+    }
+    .game-section .item.active {
+      width: 270px;
+      box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
+      -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
+    }
+    .game-section .item-desc {
+      padding: 0 14px 5px;
+      transform: translateY(calc(100% - 42px));
+      -webkit-transform: translateY(calc(100% - 42px));
+    }
+  }
+  
   /* =============== FOOTER =============== */
   .top-footer {
     flex-direction: row;
