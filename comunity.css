@@ -192,6 +192,11 @@ header {
   color: var(--second-color-alt);
   font-size: 1.2rem;
 }
+.offer-description .offer-hook:hover {
+  transform: scale(1.1);
+  color: var(--second-color-alt);
+  font-size: 1.2rem;
+}
 
 
 
@@ -337,7 +342,7 @@ header {
     font-size: 1.9rem;
     padding: 1.5rem 0 0.5rem 0;
   }
-
+  
   .offer-description {
     background-color: var(--white-color-alt);
     padding: 2rem 1rem;
